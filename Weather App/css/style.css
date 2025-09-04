@@ -1,0 +1,165 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b1120;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.top-bar input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.top-bar button {
+  padding: 10px 15px;
+  background-color: #1f2937;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.top-bar button:hover {
+  background-color: #374151;
+}
+
+/* Main Weather Section */
+.main-weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 15px;
+  gap: 2rem;
+}
+
+.location-time h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#currentDate, #currentTime {
+  font-size: 1.1rem;
+  color: #0b0c0c;
+}
+
+.temp-summary h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.temp-summary p, .sun-times span {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #090909;
+}
+
+.sun-times {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.metrics div {
+  background: #334155;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.metrics span {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.metrics small {
+  color: #232324;
+  font-size: 0.9rem;
+}
+
+/* Forecast Cards */
+.forecast, .hourly {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+.forecast-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #111010;
+}
+
+.forecast-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.forecast-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.forecast-cards::-webkit-scrollbar-thumb {
+  background-color: #334155;
+  border-radius: 4px;
+}
+
+.forecast-cards .card {
+  min-width: 120px;
+  background: #334155;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card span {
+  display: block;
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+/* Error Message */
+.error-msg {
+  text-align: center;
+  color: #f87171;
+  font-weight: bold;
+}

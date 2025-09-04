@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #88b1ef;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    .dashboard {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .top-bar input,
+    .top-bar button {
+      background-color: #ffffff;
+      border: 1px solid #d1d5db;
+      color: #1f2937;
+    }
+
+    .main-weather,
+    .forecast,
+    .hourly {
+      background-color: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+    }
+
+    .metrics div,
+    .forecast-cards .card {
+      background-color: #f1f5f9;
+      color: #1f2937;
+      border-radius: 10px;
+    }
+
+    .forecast-title {
+      color: #111827;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main class="dashboard">
+    <!-- Search & Current Location Bar -->
+    <section class="top-bar">
+      <input type="text" id="cityInput" placeholder="Search city...">
+      <button id="getWeatherBtn">Search</button>
+      <button id="geoBtn" class="geo-btn">📍 Current Location</button>
+    </section>
+
+    <!-- Main Weather Info -->
+    <section class="main-weather">
+      <div class="location-time">
+        <h2 id="cityName">City Name</h2>
+        <div id="currentDate">Date</div>
+        <div id="currentTime">Time</div>
+      </div>
+
+      <div class="temp-summary">
+        <h1 id="temperature">--°C</h1>
+        <p id="feelsLike">Feels like: --°C</p>
+        <p id="condition">Condition</p>
+        <div class="sun-times">
+          <span id="sunrise">Sunrise: --</span>
+          <span id="sunset">Sunset: --</span>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div><span id="humidity">--%</span><small>Humidity</small></div>
+        <div><span id="wind">-- km/h</span><small>Wind Speed</small></div>
+        <div><span id="pressure">-- hPa</span><small>Pressure</small></div>
+        <div><span id="uv">--</span><small>UV Index</small></div>
+      </div>
+    </section>
+
+    <!-- Forecast Sections -->
+    <section class="forecast">
+      <div class="forecast-title">5 Days Forecast:</div>
+      <div id="fiveDayForecast" class="forecast-cards"></div>
+    </section>
+
+    <section class="hourly">
+      <div class="forecast-title">Hourly Forecast:</div>
+      <div id="hourlyForecast" class="forecast-cards"></div>
+    </section>
+
+    <p id="errorMsg" class="error-msg"></p>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
